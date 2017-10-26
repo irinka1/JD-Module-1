@@ -33,7 +33,7 @@ CREATE TABLE client_project
 CREATE TABLE companies_projects
 (companies_name VARCHAR(50),
  projects_name VARCHAR(50),
-  constraint PRIMARY KEY(companies_name, project_name)
+  constraint PRIMARY KEY(companies_name, projects_name)
 );
 
 CREATE TABLE developers_project
@@ -46,4 +46,5 @@ CREATE TABLE developers_skills
 (developers_name VARCHAR(50),
  skills_name VARCHAR(50),
   constraint PRIMARY KEY(developers_name, skills_name)
-)
+);
+

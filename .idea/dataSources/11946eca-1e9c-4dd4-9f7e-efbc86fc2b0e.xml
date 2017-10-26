@@ -16,131 +16,148 @@
     <schema id="10" parent="1" name="sys"/>
     <table id="11" parent="2" name="client_project"/>
     <table id="12" parent="2" name="companies"/>
-    <table id="13" parent="2" name="customers"/>
-    <table id="14" parent="2" name="developers"/>
-    <table id="15" parent="2" name="developers_project"/>
-    <table id="16" parent="2" name="developers_skills"/>
-    <table id="17" parent="2" name="project"/>
-    <table id="18" parent="2" name="skills"/>
-    <column id="19" parent="11" name="client_name">
+    <table id="13" parent="2" name="companies_projects"/>
+    <table id="14" parent="2" name="customers"/>
+    <table id="15" parent="2" name="developers"/>
+    <table id="16" parent="2" name="developers_project"/>
+    <table id="17" parent="2" name="developers_skills"/>
+    <table id="18" parent="2" name="project"/>
+    <table id="19" parent="2" name="skills"/>
+    <column id="20" parent="11" name="client_name">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="11" name="project_name">
+    <column id="21" parent="11" name="project_name">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="21" parent="11" name="PRIMARY">
+    <key id="22" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>client_name
 project_name</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="22" parent="12" name="ID">
+    <column id="23" parent="12" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="23" parent="12" name="NAME">
+    <column id="24" parent="12" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="24" parent="12" name="PRIMARY">
+    <key id="25" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="25" parent="13" name="ID">
+    <column id="26" parent="13" name="companies_name">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="13" name="projects_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="28" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>companies_name
+projects_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="14" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="26" parent="13" name="NAME">
+    <column id="30" parent="14" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="27" parent="13" name="PRIMARY">
+    <key id="31" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="28" parent="14" name="ID">
+    <column id="32" parent="15" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="29" parent="14" name="NAME">
+    <column id="33" parent="15" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="30" parent="14" name="PRIMARY">
+    <key id="34" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="31" parent="15" name="developers_name">
+    <column id="35" parent="16" name="developers_name">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="15" name="project_name">
+    <column id="36" parent="16" name="project_name">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="33" parent="15" name="PRIMARY">
+    <key id="37" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>developers_name
 project_name</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="34" parent="16" name="developers_name">
+    <column id="38" parent="17" name="developers_name">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="16" name="skills_name">
+    <column id="39" parent="17" name="skills_name">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="36" parent="16" name="PRIMARY">
+    <key id="40" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>developers_name
 skills_name</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="37" parent="17" name="ID">
+    <column id="41" parent="18" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="38" parent="17" name="NAME">
+    <column id="42" parent="18" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="39" parent="17" name="PRIMARY">
+    <key id="43" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="40" parent="18" name="ID">
+    <column id="44" parent="19" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="41" parent="18" name="NAME">
+    <column id="45" parent="19" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="42" parent="18" name="PRIMARY">
+    <key id="46" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

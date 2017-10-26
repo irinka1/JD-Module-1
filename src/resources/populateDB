@@ -1,0 +1,35 @@
+INSERT INTO developers(NAME) VALUES
+  ('Ivanov'),
+  ('Petrov');
+
+INSERT INTO skills(NAME) VALUES
+  ('Java'),
+  ('C++');
+
+INSERT INTO project(NAME) VALUES
+  ('Project1'),
+  ('Project2');
+
+INSERT INTO companies(NAME) VALUES
+  ('Google'),
+  ('Apple');
+
+INSERT INTO customers(NAME) VALUES
+  ('Client1'),
+  ('Client2');
+
+INSERT INTO companies(NAME) VALUES
+  ('Google'),
+  ('Apple');
+
+insert into developers_skills(developers_id, skills_id) values
+  ('Masha','Java'), ('Masha','C++'), ('Maxim','Java'),('Maxim','C++');
+
+insert into developers_project(developers_id, project_id) values
+  ('Masha','Project1'), ('Masha','Project2'), ('Maxim','Project1'),('Maxim','Project2');
+
+insert into companies_projects(companies_id, project_id) values
+  ('Google','Project2'), ('Apple','Project1'), ('Google','Project2'),('Apple','Project1');
+
+insert into client_project(customers_id, project_id) values
+  ('Client1','Project1'), ('Client2','Project2'), ('Client1','Project1'),('Client2','Project2');
