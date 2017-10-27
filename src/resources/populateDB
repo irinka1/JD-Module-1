@@ -1,6 +1,6 @@
 INSERT INTO developers(NAME) VALUES
-  ('Ivanov'),
-  ('Petrov');
+  ('Masha'),
+  ('Maxim');
 
 INSERT INTO skills(NAME) VALUES
   ('Java'),
@@ -22,14 +22,23 @@ INSERT INTO companies(NAME) VALUES
   ('Google'),
   ('Apple');
 
-insert into developers_skills(developers_id, skills_id) values
+insert into developers_skills(developers_name, skills_name) values
   ('Masha','Java'), ('Masha','C++'), ('Maxim','Java'),('Maxim','C++');
 
-insert into developers_project(developers_id, project_id) values
+insert into developers_project(developers_name, project_name) values
   ('Masha','Project1'), ('Masha','Project2'), ('Maxim','Project1'),('Maxim','Project2');
 
-insert into companies_projects(companies_id, project_id) values
-  ('Google','Project2'), ('Apple','Project1'), ('Google','Project2'),('Apple','Project1');
+insert into companies_projects(companies_name, projects_name) values
+  ('Google','Project1'), ('Apple','Project1'), ('Google','Project2'),('Apple','Project2');
 
-insert into client_project(client_id, project_id) values
-  ('Client1','Project1'), ('Client2','Project2'), ('Client1','Project1'),('Client2','Project2');
+insert into client_project(client_name, project_name) values
+  ('Client1','Project1'), ('Client1','Project2'), ('Client2','Project1'),('Client2','Project2');
+
+
+UPDATE developers
+SET salary = 4000
+WHERE name = 'Maxim';
+
+UPDATE developers
+SET salary = 3000
+WHERE name = 'Masha';

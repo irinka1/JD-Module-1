@@ -1,0 +1,3 @@
+/*2. Найти самый дорогой проект (исходя из ЗП разработчиков). */
+
+SELECT MAX(salary) AS LargestSalary FROM developers
