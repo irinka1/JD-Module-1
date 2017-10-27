@@ -31,5 +31,5 @@ insert into developers_project(developers_id, project_id) values
 insert into companies_projects(companies_id, project_id) values
   ('Google','Project2'), ('Apple','Project1'), ('Google','Project2'),('Apple','Project1');
 
-insert into client_project(customers_id, project_id) values
+insert into client_project(client_id, project_id) values
   ('Client1','Project1'), ('Client2','Project2'), ('Client1','Project1'),('Client2','Project2');
