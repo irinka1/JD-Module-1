@@ -50,7 +50,11 @@ WHERE name = 'Maxim';
 
 UPDATE developers
 SET salary = 3000
-WHERE name = 'Maria' or 'Denis';
+WHERE name = 'Maria';
+
+UPDATE developers
+SET salary = 3000
+WHERE name = 'Denis';
 
 UPDATE developers
 SET salary = 2500
