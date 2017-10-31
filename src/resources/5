@@ -1,0 +1,5 @@
+/*5. Найти клиента (customer), которая приносит меньше всего прибыли компании (company) для каждой из компаний .*/
+
+SELECT  CUSTOMER_ID, cost
+FROM project
+ORDER BY cost limit 1;

@@ -1,0 +1,3 @@
+/*4. Добавить поле (cost - стоимость) в таблицу Projects .*/
+
+ALTER TABLE `project` ADD `cost` DECIMAL(50) NOT NULL AFTER `NAME`

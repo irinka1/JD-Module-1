@@ -14,155 +14,165 @@
     <schema id="8" parent="1" name="people"/>
     <schema id="9" parent="1" name="performance_schema"/>
     <schema id="10" parent="1" name="sys"/>
-    <table id="11" parent="2" name="client_project"/>
-    <table id="12" parent="2" name="companies"/>
-    <table id="13" parent="2" name="companies_projects"/>
-    <table id="14" parent="2" name="customers"/>
-    <table id="15" parent="2" name="developers"/>
-    <table id="16" parent="2" name="developers_project"/>
-    <table id="17" parent="2" name="developers_skills"/>
-    <table id="18" parent="2" name="project"/>
-    <table id="19" parent="2" name="skills"/>
-    <column id="20" parent="11" name="client_name">
-      <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="21" parent="11" name="project_name">
-      <Position>2</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="22" parent="11" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>client_name
-project_name</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="23" parent="12" name="ID">
+    <table id="11" parent="2" name="companies"/>
+    <table id="12" parent="2" name="customers"/>
+    <table id="13" parent="2" name="developers"/>
+    <table id="14" parent="2" name="developers_skills"/>
+    <table id="15" parent="2" name="project"/>
+    <table id="16" parent="2" name="skills"/>
+    <column id="17" parent="11" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="24" parent="12" name="NAME">
+    <column id="18" parent="11" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="25" parent="12" name="PRIMARY">
+    <key id="19" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="26" parent="13" name="companies_name">
-      <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="27" parent="13" name="projects_name">
-      <Position>2</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="28" parent="13" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>companies_name
-projects_name</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="29" parent="14" name="ID">
+    <column id="20" parent="12" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="30" parent="14" name="NAME">
+    <column id="21" parent="12" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="31" parent="14" name="PRIMARY">
+    <key id="22" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="32" parent="15" name="ID">
+    <column id="23" parent="13" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="33" parent="15" name="NAME">
+    <column id="24" parent="13" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="34" parent="15" name="salary">
+    <column id="25" parent="13" name="salary">
       <Position>3</Position>
       <DataType>decimal(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="35" parent="15" name="PRIMARY">
+    <column id="26" parent="13" name="company_id">
+      <Position>4</Position>
+      <DataType>int(50)|0</DataType>
+    </column>
+    <index id="27" parent="13" name="company_id">
+      <ColNames>company_id</ColNames>
+    </index>
+    <key id="28" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="36" parent="16" name="developers_name">
+    <foreign-key id="29" parent="13" name="developers_ibfk_1">
+      <ColNames>company_id</ColNames>
+      <RefSchemaName>module2</RefSchemaName>
+      <RefTableName>companies</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="30" parent="14" name="developers_id">
       <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>int(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="16" name="project_name">
+    <column id="31" parent="14" name="skills_id">
       <Position>2</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>int(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="38" parent="16" name="PRIMARY">
+    <index id="32" parent="14" name="skills_id">
+      <ColNames>skills_id</ColNames>
+    </index>
+    <key id="33" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>developers_name
-project_name</ColNames>
+      <ColNames>developers_id
+skills_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="39" parent="17" name="developers_name">
-      <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="40" parent="17" name="skills_name">
-      <Position>2</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="41" parent="17" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>developers_name
-skills_name</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="42" parent="18" name="ID">
+    <foreign-key id="34" parent="14" name="developers_skills_ibfk_1">
+      <ColNames>developers_id</ColNames>
+      <RefSchemaName>module2</RefSchemaName>
+      <RefTableName>developers</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="35" parent="14" name="developers_skills_ibfk_2">
+      <ColNames>skills_id</ColNames>
+      <RefSchemaName>module2</RefSchemaName>
+      <RefTableName>skills</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="36" parent="15" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="43" parent="18" name="NAME">
+    <column id="37" parent="15" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="44" parent="18" name="PRIMARY">
+    <column id="38" parent="15" name="cost">
+      <Position>3</Position>
+      <DataType>decimal(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="15" name="COMPANY_ID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="15" name="CUSTOMER_ID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="41" parent="15" name="COMPANY_ID">
+      <ColNames>COMPANY_ID</ColNames>
+    </index>
+    <index id="42" parent="15" name="CUSTOMER_ID">
+      <ColNames>CUSTOMER_ID</ColNames>
+    </index>
+    <key id="43" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="45" parent="19" name="ID">
+    <foreign-key id="44" parent="15" name="project_ibfk_1">
+      <ColNames>COMPANY_ID</ColNames>
+      <RefSchemaName>module2</RefSchemaName>
+      <RefTableName>companies</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="45" parent="15" name="project_ibfk_2">
+      <ColNames>CUSTOMER_ID</ColNames>
+      <RefSchemaName>module2</RefSchemaName>
+      <RefTableName>customers</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="46" parent="16" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="46" parent="19" name="NAME">
+    <column id="47" parent="16" name="NAME">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="47" parent="19" name="PRIMARY">
+    <key id="48" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

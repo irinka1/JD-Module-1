@@ -11,12 +11,18 @@ CREATE TABLE  customers
 
 CREATE TABLE  developers
 (ID INT AUTO_INCREMENT PRIMARY KEY,
- NAME VARCHAR(50)
+ NAME VARCHAR(50),
+ company_id int(50),
+ FOREIGN KEY (company_id) REFERENCES companies (id)
 );
 
 CREATE TABLE  project
 (ID INT AUTO_INCREMENT PRIMARY KEY,
- NAME VARCHAR(50)
+ NAME VARCHAR(50),
+ COMPANY_ID INT NOT NULL,
+ CUSTOMER_ID INT NOT NULL,
+ FOREIGN KEY (company_id) REFERENCES companies (id),  FOREIGN KEY (customer_id)
+ REFERENCES customers (id)
 );
 
 CREATE TABLE  skills
@@ -24,27 +30,19 @@ CREATE TABLE  skills
  NAME VARCHAR(50)
 );
 
-CREATE TABLE client_project
-(client_name VARCHAR(50),
- project_name VARCHAR(50),
-  constraint PRIMARY KEY(client_name, project_name)
-);
-
-CREATE TABLE companies_projects
-(companies_name VARCHAR(50),
- projects_name VARCHAR(50),
-  constraint PRIMARY KEY(companies_name, projects_name)
-);
 
 CREATE TABLE developers_project
-(developers_name VARCHAR(50),
- project_name VARCHAR(50),
-  constraint PRIMARY KEY(developers_name, project_name)
+( developers_id INT(50),
+ project_id INT(50),
+ constraint PRIMARY KEY(developers_id, project_id),
+ FOREIGN KEY (developers_id) REFERENCES developers (id), FOREIGN KEY (project_id) REFERENCES project (id)
 );
 
+
 CREATE TABLE developers_skills
-(developers_name VARCHAR(50),
- skills_name VARCHAR(50),
-  constraint PRIMARY KEY(developers_name, skills_name)
+(developers_id INT(50),
+ skills_id INT(50),
+  constraint PRIMARY KEY(developers_id, skills_id),
+   FOREIGN KEY (developers_id) REFERENCES developers (id), FOREIGN KEY (skills_id) REFERENCES skills (id)
 );
 
