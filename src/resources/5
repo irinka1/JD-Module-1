@@ -2,4 +2,5 @@
 
 SELECT  CUSTOMER_ID, cost
 FROM project
+  /*WHERE project.COMPANY_ID = 3*/
 ORDER BY cost limit 1;
