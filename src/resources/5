@@ -1,6 +1,5 @@
 /*5. Найти клиента (customer), которая приносит меньше всего прибыли компании (company) для каждой из компаний .*/
 
-SELECT  CUSTOMER_ID, cost
+SELECT  min(project.cost), COMPANY_ID,CUSTOMER_ID
 FROM project
-  /*WHERE project.COMPANY_ID = 3*/
-ORDER BY cost limit 1;
+GROUP BY COMPANY_ID

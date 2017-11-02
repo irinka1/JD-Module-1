@@ -1,8 +1,14 @@
 /*Вычислить, среднюю ЗП программистов в проекте, который приносит наименьшую прибыль.*/
 
-SELECT sum(devSalary) / count(devName) as MediumSalary
-FROM (
-       SELECT developers.salary as devSalary, developers.NAME as devName, cost
-       FROM developers, project
-       WHERE developers.company_id=project.COMPANY_ID
-             AND project.cost=(SELECT MIN(project.cost) FROM project)) AS table1
+CREATE TEMPORARY TABLE Summary AS(
+       SELECT
+              developers.salary as devSalary, developers.NAME as devName
+       FROM developers
+              INNER JOIN project ON
+                                        developers.company_id = project.COMPANY_ID
+                                        AND project.cost=(SELECT MIN(project.cost) FROM project)
+);
+SELECT avg(devSalary) as MediumSalary
+FROM Summary;
+
+DROP TABLE Summary
