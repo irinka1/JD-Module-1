@@ -1,0 +1,28 @@
+Part 1
+You must create a database that contains the following tables:
+- developers (stores data about developers)
+- skills (developer skills - Java, C ++, etc.)
+- projects (projects on which developers work)
+- companies (IT companies in which developers work)
+- customers (customers who are customers of projects in IT companies)
+
+Wherein:
+- everywhere ManyToMany
+- developers can have many skills
+- Each project has many developers who work on it
+- companies perform many projects simultaneously - customers have many projects
+It is necessary to implement both tables and competent links between them.
+The result of the job is a project that contains files in the resources folder.
+
+Part 2
+It is necessary to compile queries that perform the following tasks:
+1. Add developers a field (salary - salary).
+2. Find the most expensive project (based on PP developers).
+3. Calculate the total Salary of all Java developers.
+4. Add a field (cost - cost) to the Projects table.
+5. Find a customer that brings the least profit to the company for each company.
+6. Calculate, the average Salary of programmers in the project, which brings the lowest profit.
+The result of the job is a project that contains the files initDB.sql (creating tables and links between them) in the resources folder, populateDB.sql (filling in the tables with data), 1.sql, 2.sql, 3.sql, 4.sql, 5 .sql, 6.sql, each of which receives data for each of the items in the job.
+
+
+Use MySQL.
