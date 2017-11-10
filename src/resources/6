@@ -1,4 +1,4 @@
-/*Вычислить, среднюю ЗП программистов в проекте, который приносит наименьшую прибыль.*/
+/*Calculate the average salary of programmers in a project that brings the lowest profit.*/
 
 CREATE TEMPORARY TABLE Summary AS(
        SELECT
