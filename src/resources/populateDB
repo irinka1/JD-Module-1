@@ -1,6 +1,6 @@
-/*разработчики могут иметь много навыков
-- каждый проект имеет много разработчиков, которые над ним работают
-- компании выполняют много проектов одновременно - заказчики имеют много проектов*/
+/*Developers can have many skills
+- Each project has many developers who work on it
+- companies perform many projects simultaneously - customers have many projects*/
 
 INSERT INTO developers(NAME, company_id) VALUES
   ('Maria', 4),
