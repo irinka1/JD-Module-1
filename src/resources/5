@@ -1,4 +1,4 @@
-/*5. Найти клиента (customer), которая приносит меньше всего прибыли компании (company) для каждой из компаний .*/
+/*5. Find a customer that brings the least profit to the company for each company .*/
 
 SELECT  min(project.cost), COMPANY_ID,CUSTOMER_ID
 FROM project
